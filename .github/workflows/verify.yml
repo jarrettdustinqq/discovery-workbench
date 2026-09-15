@@ -1,0 +1,32 @@
+name: Verify published research preview
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: discovery-workbench-verification
+  cancel-in-progress: false
+jobs:
+  browser-and-engine:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Test numeric engine
+        run: node --test tests/engine.test.mjs | tee evidence/engine-tests.txt
+      - name: Install ephemeral browser test dependencies
+        run: |
+          python3 -m venv "$RUNNER_TEMP/browser-venv"
+          "$RUNNER_TEMP/browser-venv/bin/pip" install 'playwright==1.62.0'
+          "$RUNNER_TEMP/browser-venv/bin/python" -m playwright install --with-deps chromium webkit
+      - name: Verify deployed runtime hashes
+        run: python3 tests/verify_public.py
+      - name: Exercise Chromium
+        run: '"$RUNNER_TEMP/browser-venv/bin/python" tests/browser_test.py --browser-engine chromium --url https://jarrettdustinqq.github.io/discovery-workbench/ --output evidence/browser-chromium.json'
+      - name: Exercise WebKit
+        run: '"$RUNNER_TEMP/browser-venv/bin/python" tests/browser_test.py --browser-engine webkit --url https://jarrettdustinqq.github.io/discovery-workbench/ --output evidence/browser-webkit.json'

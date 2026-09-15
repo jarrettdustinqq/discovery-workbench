@@ -2,7 +2,7 @@
 import argparse, json, pathlib, subprocess, time, urllib.parse
 from playwright.sync_api import sync_playwright
 ROOT=pathlib.Path(__file__).resolve().parents[1]
-p=argparse.ArgumentParser(); p.add_argument('--url'); p.add_argument('--output', default=str(ROOT/'evidence/browser-tests.json')); args=p.parse_args()
+p=argparse.ArgumentParser(); p.add_argument('--url'); p.add_argument('--browser-engine', choices=['chromium','webkit'], default='chromium'); p.add_argument('--browser-executable'); p.add_argument('--output', default=str(ROOT/'evidence/browser-tests.json')); args=p.parse_args()
 server=None
 if not args.url:
     server=subprocess.Popen(['python3','-m','http.server','8765','--bind','127.0.0.1'],cwd=ROOT,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
@@ -14,7 +14,9 @@ def check(name, value):
     checks.append(name)
 try:
   with sync_playwright() as pw:
-    browser=pw.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox'])
+    launch={'headless':True}
+    if args.browser_executable: launch['executable_path']=args.browser_executable
+    browser=getattr(pw,args.browser_engine).launch(**launch)
     page=browser.new_page(viewport={'width':1440,'height':1000},accept_downloads=True)
     page.on('pageerror',lambda e:errors.append(str(e)))
     page.on('request',lambda r:requests.append({'url':r.url,'method':r.method}))
@@ -61,8 +63,8 @@ try:
     check('no cross-origin requests',all(urllib.parse.urlsplit(r['url']).netloc==origin for r in requests))
     check('no upload or write requests',all(r['method']=='GET' for r in requests))
     check('no uncaught browser errors',not errors)
-    output={'url':url,'checks':checks,'passed':len(checks),'errors':errors,'requests':requests,'browser':browser.version}
-    pathlib.Path(args.output).write_text(json.dumps(output,indent=2)); print(json.dumps({'passed':len(checks),'errors':errors,'url':url}))
+    output={'url':url,'checks':checks,'passed':len(checks),'errors':errors,'requests':requests,'browser':browser.version,'engine':args.browser_engine}
+    pathlib.Path(args.output).write_text(json.dumps(output,indent=2)); print('BROWSER_REPORT_JSON '+json.dumps(output))
     browser.close()
 finally:
   if server:server.terminate();server.wait(timeout=5)
