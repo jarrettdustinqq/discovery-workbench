@@ -1,0 +1,388 @@
+{
+  "schemaVersion": 1,
+  "engineVersion": "0.1.0",
+  "datasetSHA256": "4a8a4ab80c2fd6c8f93db9b0bcebeea074f3274fd44f292bae004965392ea9f2",
+  "data": {
+    "headers": [
+      "nist_measurement",
+      "customer_measurement"
+    ],
+    "rows": [
+      [
+        0.2,
+        0.1
+      ],
+      [
+        337.4,
+        338.8
+      ],
+      [
+        118.2,
+        118.1
+      ],
+      [
+        884.6,
+        888
+      ],
+      [
+        10.1,
+        9.2
+      ],
+      [
+        226.5,
+        228.1
+      ],
+      [
+        666.3,
+        668.5
+      ],
+      [
+        996.3,
+        998.5
+      ],
+      [
+        448.6,
+        449.1
+      ],
+      [
+        777,
+        778.9
+      ],
+      [
+        558.2,
+        559.2
+      ],
+      [
+        0.4,
+        0.3
+      ],
+      [
+        0.6,
+        0.1
+      ],
+      [
+        775.5,
+        778.1
+      ],
+      [
+        666.9,
+        668.8
+      ],
+      [
+        338,
+        339.3
+      ],
+      [
+        447.5,
+        448.9
+      ],
+      [
+        11.6,
+        10.8
+      ],
+      [
+        556,
+        557.7
+      ],
+      [
+        228.1,
+        228.3
+      ],
+      [
+        995.8,
+        998
+      ],
+      [
+        887.6,
+        888.8
+      ],
+      [
+        120.2,
+        119.6
+      ],
+      [
+        0.3,
+        0.3
+      ],
+      [
+        0.3,
+        0.6
+      ],
+      [
+        556.8,
+        557.6
+      ],
+      [
+        339.1,
+        339.3
+      ],
+      [
+        887.2,
+        888
+      ],
+      [
+        999,
+        998.5
+      ],
+      [
+        779,
+        778.9
+      ],
+      [
+        11.1,
+        10.2
+      ],
+      [
+        118.3,
+        117.6
+      ],
+      [
+        229.2,
+        228.9
+      ],
+      [
+        669.1,
+        668.4
+      ],
+      [
+        448.9,
+        449.2
+      ],
+      [
+        0.5,
+        0.2
+      ]
+    ]
+  },
+  "result": {
+    "engineVersion": "0.1.0",
+    "options": {
+      "seed": 42,
+      "family": "algebra",
+      "maxTerms": 3,
+      "mode": "random"
+    },
+    "headers": [
+      "nist_measurement",
+      "customer_measurement"
+    ],
+    "rowCount": 36,
+    "split": {
+      "train": [
+        20,
+        22,
+        8,
+        14,
+        31,
+        9,
+        3,
+        27,
+        1,
+        11,
+        2,
+        18,
+        30,
+        16,
+        26,
+        33,
+        0,
+        19,
+        13,
+        10,
+        4
+      ],
+      "validation": [
+        25,
+        28,
+        32,
+        6,
+        12,
+        23,
+        24,
+        17
+      ],
+      "test": [
+        7,
+        34,
+        5,
+        35,
+        29,
+        15,
+        21
+      ]
+    },
+    "champion": {
+      "inputCount": 1,
+      "intercept": -0.5490946900551421,
+      "terms": [
+        {
+          "feature": {
+            "op": "raw",
+            "a": 0,
+            "label": "nist_measurement",
+            "cost": 1,
+            "id": 0
+          },
+          "coefficient": 1.002975695680335
+        }
+      ],
+      "expression": "-0.5490947 + 1.002976 * nist_measurement",
+      "complexity": 2
+    },
+    "validation": {
+      "mse": 1.3150962055944015,
+      "rmse": 1.1467764409833336,
+      "r2": 0.9999899573753679,
+      "invalid": false,
+      "n": 8
+    },
+    "test": {
+      "mse": 1.0743869674300945,
+      "rmse": 1.0365263949509895,
+      "r2": 0.9999908818179926,
+      "invalid": false,
+      "n": 7
+    },
+    "baseline": {
+      "mse": 127681.05714285711,
+      "rmse": 357.3248621952538,
+      "r2": -0.08361247224525181,
+      "invalid": false,
+      "n": 7
+    },
+    "status": "supported_on_this_split",
+    "warnings": [
+      "Association is not causation. No dimensional or physical constraints are enforced.",
+      "Final metrics are one held-out check, not independent replication. Adaptive reruns require fresh external validation.",
+      "Repeated input groups are kept together; partition row percentages may differ from 60/20/20."
+    ],
+    "experiment": {
+      "inputs": [
+        4.190166623704135
+      ],
+      "predictions": [
+        3.6535405943710337,
+        3.6063419325782755,
+        3.6142503116268614,
+        3.547114076435035,
+        3.3818267538777027,
+        3.6081503873951064,
+        3.4292977782449325,
+        74.2284813260013
+      ],
+      "disagreement": 70.8466545721236,
+      "bounds": [
+        [
+          0.2,
+          995.8
+        ]
+      ],
+      "nearestDistance": 0.0038069170587626913,
+      "offSupport": false,
+      "modelExpressions": [
+        "-0.5490947 + 1.002976 * nist_measurement",
+        "-0.5981831 + 1.003429 * nist_measurement - 5.036611e-7 * nist_measurement^2",
+        "-0.5895128 + 1.003245 * nist_measurement - 3.444059e-10 * nist_measurement^3",
+        "-0.6897528 + 1.003185 * nist_measurement + 0.139764 * 1/nist_measurement",
+        "-0.8711853 + 1.004513 * nist_measurement - 0.000001402776 * nist_measurement^2 + 0.1841931 * 1/nist_measurement",
+        "-0.5961841 + 1.003383 * nist_measurement - 3.731615e-7 * nist_measurement^2 - 9.134547e-11 * nist_measurement^3",
+        "-0.8179636 + 1.003875 * nist_measurement - 8.228999e-10 * nist_measurement^3 + 0.1712015 * 1/nist_measurement",
+        "78.78192 + 0.002372717 * nist_measurement^2 - 0.00000149854 * nist_measurement^3 - 19.25377 * 1/nist_measurement"
+      ],
+      "note": "Proposed measurement only. Disagreement is not a confidence interval. Check physical feasibility and safety independently."
+    },
+    "alternatives": [
+      {
+        "expression": "-0.5490947 + 1.002976 * nist_measurement",
+        "validationRMSE": 1.1467764409833336,
+        "complexity": 2,
+        "score": 0.00101253242012952
+      },
+      {
+        "expression": "-0.5981831 + 1.003429 * nist_measurement - 5.036611e-7 * nist_measurement^2",
+        "validationRMSE": 1.1230067138528579,
+        "complexity": 4,
+        "score": 0.0020120182746928656
+      },
+      {
+        "expression": "-0.5895128 + 1.003245 * nist_measurement - 3.444059e-10 * nist_measurement^3",
+        "validationRMSE": 1.1156012726747309,
+        "complexity": 5,
+        "score": 0.002511860293129852
+      },
+      {
+        "expression": "-0.6897528 + 1.003185 * nist_measurement + 0.139764 * 1/nist_measurement",
+        "validationRMSE": 1.1229785321416224,
+        "complexity": 5,
+        "score": 0.0025120176715062717
+      },
+      {
+        "expression": "-0.8711853 + 1.004513 * nist_measurement - 0.000001402776 * nist_measurement^2 + 0.1841931 * 1/nist_measurement",
+        "validationRMSE": 1.0406409004502943,
+        "complexity": 7,
+        "score": 0.0035103199882504364
+      },
+      {
+        "expression": "-0.5961841 + 1.003383 * nist_measurement - 3.731615e-7 * nist_measurement^2 - 9.134547e-11 * nist_measurement^3",
+        "validationRMSE": 1.1209001073667177,
+        "complexity": 7,
+        "score": 0.0035119732277153685
+      },
+      {
+        "expression": "-0.8179636 + 1.003875 * nist_measurement - 8.228999e-10 * nist_measurement^3 + 0.1712015 * 1/nist_measurement",
+        "validationRMSE": 1.0356301442080316,
+        "complexity": 8,
+        "score": 0.004010220844636774
+      },
+      {
+        "expression": "78.78192 + 0.002372717 * nist_measurement^2 - 0.00000149854 * nist_measurement^3 - 19.25377 * 1/nist_measurement",
+        "validationRMSE": 37.799002844177814,
+        "complexity": 9,
+        "score": 0.01811564147011481
+      }
+    ],
+    "search": {
+      "evaluated": 15,
+      "limit": 1500,
+      "featureCount": 4,
+      "method": "Training-only QR; beam width 8; validation MSE / training variance + 0.0005 × complexity"
+    },
+    "testPoints": [
+      {
+        "row": 9,
+        "actual": 998.5,
+        "predicted": 998.7155909162627
+      },
+      {
+        "row": 36,
+        "actual": 449.2,
+        "predicted": 449.68669510084726
+      },
+      {
+        "row": 7,
+        "actual": 228.1,
+        "predicted": 226.62490038154075
+      },
+      {
+        "row": 37,
+        "actual": 0.2,
+        "predicted": -0.047606842214974576
+      },
+      {
+        "row": 31,
+        "actual": 778.9,
+        "predicted": 780.7689722449259
+      },
+      {
+        "row": 17,
+        "actual": 339.3,
+        "predicted": 338.45669044989813
+      },
+      {
+        "row": 23,
+        "actual": 888.8,
+        "predicted": 889.6921327958103
+      }
+    ]
+  }
+}

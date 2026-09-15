@@ -1,0 +1,43 @@
+✔ CSV accepts BOM, CRLF, quotes and decimal exponent (8.275313ms)
+✔ CSV rejects duplicate headers (1.789292ms)
+✔ CSV rejects formula injection as numeric data (1.159079ms)
+✔ CSV rejects missing values (1.514758ms)
+✔ CSV rejects Infinity and NaN (1.493582ms)
+✔ CSV rejects inconsistent width (1.002135ms)
+✔ CSV rejects unclosed quotes (5.825436ms)
+✔ CSV rejects unsafe and excessively long headers (1.536079ms)
+✔ CSV rejects too many inputs (1.946617ms)
+✔ CSV rejects oversized input (2.336635ms)
+✔ CSV rejects hexadecimal rather than coercing it (1.148258ms)
+✔ CSV rejects extreme numeric magnitude (4.103556ms)
+✔ split is deterministic and covers every row once (4.510294ms)
+✔ duplicate input groups never leak across splits (1.728067ms)
+✔ ordered split preserves unique-group order (1.516933ms)
+✔ insufficient independent data is rejected (3.019857ms)
+✔ polynomial law is recovered on held-out rows (263.827071ms)
+✔ recovered model predicts an unseen point (38.853897ms)
+✔ final-target poisoning cannot change model selection or proposed experiment (90.764346ms)
+✔ constant target produces finite output and undefined R squared (49.157304ms)
+✔ collinear inputs do not crash and trigger a warning (35.610378ms)
+✔ experiment stays inside coordinate ranges and is not an observed point (48.268453ms)
+✔ fixed random noise is not called supported generalization (14.840718ms)
+✔ search has an explicit bounded evaluation count (30.194297ms)
+✔ repeated runs reproduce all mathematical outputs (71.716541ms)
+✔ invalid options cannot create unbounded search (2.212758ms)
+✔ structured API validates dimensions and finite values (1.040466ms)
+✔ expanded grammar recovers a sinusoidal relation (22.492442ms)
+✔ all synthetic examples declare their origin (1.999143ms)
+✔ unknown synthetic scenario is rejected (0.994537ms)
+✔ all-empty data records are rejected rather than silently discarded (1.195514ms)
+✔ prediction rejects wrong input dimensionality (37.332371ms)
+✔ CLI produces the same selected model as browser core (272.195214ms)
+✔ an undefined reciprocal on final inputs is an explicit failed result (4.799177ms)
+✔ NIST reference example retains observed-data provenance (0.875071ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 35
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1378.759428

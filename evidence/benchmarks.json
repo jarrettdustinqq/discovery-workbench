@@ -1,0 +1,1820 @@
+{
+  "polynomial": {
+    "engineVersion": "0.1.0",
+    "options": {
+      "seed": 42,
+      "family": "algebra",
+      "maxTerms": 3,
+      "mode": "random"
+    },
+    "headers": [
+      "a",
+      "b",
+      "y"
+    ],
+    "rowCount": 160,
+    "split": {
+      "train": [
+        78,
+        14,
+        100,
+        68,
+        132,
+        79,
+        99,
+        43,
+        2,
+        119,
+        18,
+        126,
+        77,
+        112,
+        125,
+        92,
+        123,
+        48,
+        19,
+        130,
+        54,
+        53,
+        75,
+        111,
+        55,
+        155,
+        34,
+        51,
+        148,
+        52,
+        103,
+        153,
+        59,
+        64,
+        152,
+        80,
+        147,
+        139,
+        60,
+        141,
+        65,
+        135,
+        61,
+        17,
+        137,
+        88,
+        41,
+        69,
+        107,
+        16,
+        106,
+        109,
+        21,
+        12,
+        38,
+        39,
+        94,
+        82,
+        93,
+        49,
+        145,
+        5,
+        113,
+        120,
+        121,
+        142,
+        122,
+        20,
+        149,
+        30,
+        89,
+        91,
+        50,
+        127,
+        33,
+        129,
+        124,
+        90,
+        83,
+        26,
+        101,
+        97,
+        118,
+        47,
+        84,
+        10,
+        128,
+        146,
+        15,
+        63,
+        25,
+        86,
+        140,
+        138,
+        115,
+        58
+      ],
+      "validation": [
+        46,
+        116,
+        1,
+        11,
+        13,
+        159,
+        44,
+        156,
+        9,
+        114,
+        74,
+        73,
+        150,
+        157,
+        32,
+        31,
+        23,
+        57,
+        143,
+        85,
+        35,
+        133,
+        76,
+        29,
+        144,
+        67,
+        6,
+        136,
+        56,
+        40,
+        102,
+        62
+      ],
+      "test": [
+        108,
+        22,
+        3,
+        70,
+        104,
+        24,
+        8,
+        36,
+        4,
+        154,
+        7,
+        117,
+        66,
+        0,
+        87,
+        98,
+        72,
+        28,
+        45,
+        110,
+        151,
+        37,
+        158,
+        131,
+        95,
+        42,
+        81,
+        27,
+        105,
+        134,
+        71,
+        96
+      ]
+    },
+    "champion": {
+      "inputCount": 2,
+      "intercept": 1.699999999999998,
+      "terms": [
+        {
+          "feature": {
+            "op": "square",
+            "a": 0,
+            "label": "a^2",
+            "cost": 2,
+            "id": 1
+          },
+          "coefficient": 2.4
+        },
+        {
+          "feature": {
+            "op": "raw",
+            "a": 1,
+            "label": "b",
+            "cost": 1,
+            "id": 4
+          },
+          "coefficient": 0.8000000000000006
+        }
+      ],
+      "expression": "1.7 + 2.4 * a^2 + 0.8 * b",
+      "complexity": 4
+    },
+    "validation": {
+      "mse": 3.421992325187241e-30,
+      "rmse": 1.8498627855025465e-15,
+      "r2": 1,
+      "invalid": false,
+      "n": 32
+    },
+    "test": {
+      "mse": 3.682378053668395e-30,
+      "rmse": 1.9189523323075003e-15,
+      "r2": 1,
+      "invalid": false,
+      "n": 32
+    },
+    "baseline": {
+      "mse": 5.516854327479561,
+      "rmse": 2.348798485924146,
+      "r2": -0.00006711841605722135,
+      "invalid": false,
+      "n": 32
+    },
+    "status": "supported_on_this_split",
+    "warnings": [
+      "Association is not causation. No dimensional or physical constraints are enforced.",
+      "Final metrics are one held-out check, not independent replication. Adaptive reruns require fresh external validation."
+    ],
+    "experiment": null,
+    "alternatives": [
+      {
+        "expression": "1.7 + 2.4 * a^2 + 0.8 * b",
+        "validationRMSE": 1.8498627855025465e-15,
+        "complexity": 4,
+        "score": 0.002
+      },
+      {
+        "expression": "1.7 + 9.765923e-17 * a + 2.4 * a^2 + 0.8 * b",
+        "validationRMSE": 2.8302522546047714e-15,
+        "complexity": 5,
+        "score": 0.0025
+      },
+      {
+        "expression": "1.7 + 2.4 * a^2 + 0.8 * b + 1.446664e-16 * b^2",
+        "validationRMSE": 1.8385843027689748e-15,
+        "complexity": 6,
+        "score": 0.003
+      },
+      {
+        "expression": "1.7 + 2.4 * a^2 + 0.8 * b - 8.12422e-17 * a*b",
+        "validationRMSE": 1.8498627855025465e-15,
+        "complexity": 6,
+        "score": 0.003
+      },
+      {
+        "expression": "1.7 + 2.4 * a^2 + 1.114248e-17 * a^3 + 0.8 * b",
+        "validationRMSE": 1.788027882244237e-15,
+        "complexity": 7,
+        "score": 0.0035
+      },
+      {
+        "expression": "1.7 + 2.4 * a^2 + 8.997201e-19 * 1/a + 0.8 * b",
+        "validationRMSE": 1.8149684782055937e-15,
+        "complexity": 7,
+        "score": 0.0035
+      },
+      {
+        "expression": "1.7 + 2.4 * a^2 + 0.8 * b - 7.797799e-18 * b/a",
+        "validationRMSE": 1.85775845048325e-15,
+        "complexity": 7,
+        "score": 0.0035
+      },
+      {
+        "expression": "1.7 + 2.4 * a^2 + 0.8 * b + 3.173261e-17 * b^3",
+        "validationRMSE": 1.860658933827072e-15,
+        "complexity": 7,
+        "score": 0.0035
+      }
+    ],
+    "search": {
+      "evaluated": 108,
+      "limit": 1500,
+      "featureCount": 11,
+      "method": "Training-only QR; beam width 8; validation MSE / training variance + 0.0005 × complexity"
+    },
+    "testPoints": [
+      {
+        "row": 110,
+        "actual": 5.81247389456834,
+        "predicted": 5.812473894568338
+      },
+      {
+        "row": 24,
+        "actual": 6.1584855144433135,
+        "predicted": 6.158485514443312
+      },
+      {
+        "row": 5,
+        "actual": 3.7364501145397258,
+        "predicted": 3.736450114539723
+      },
+      {
+        "row": 72,
+        "actual": 5.582001519720623,
+        "predicted": 5.582001519720621
+      },
+      {
+        "row": 106,
+        "actual": 7.895544799163504,
+        "predicted": 7.895544799163503
+      },
+      {
+        "row": 26,
+        "actual": 3.681509847808157,
+        "predicted": 3.6815098478081563
+      },
+      {
+        "row": 10,
+        "actual": 3.71261182312164,
+        "predicted": 3.712611823121639
+      },
+      {
+        "row": 38,
+        "actual": 6.685539125026796,
+        "predicted": 6.685539125026793
+      },
+      {
+        "row": 6,
+        "actual": 3.8933924600760106,
+        "predicted": 3.8933924600760093
+      },
+      {
+        "row": 156,
+        "actual": 2.3160330302666443,
+        "predicted": 2.3160330302666416
+      },
+      {
+        "row": 9,
+        "actual": 2.5951298693330123,
+        "predicted": 2.595129869333011
+      },
+      {
+        "row": 119,
+        "actual": 1.7377232541241132,
+        "predicted": 1.7377232541241112
+      },
+      {
+        "row": 68,
+        "actual": 3.5811826571393555,
+        "predicted": 3.581182657139354
+      },
+      {
+        "row": 2,
+        "actual": 5.306191171411847,
+        "predicted": 5.306191171411847
+      },
+      {
+        "row": 89,
+        "actual": 7.803909408217838,
+        "predicted": 7.8039094082178355
+      },
+      {
+        "row": 100,
+        "actual": 5.778000124479329,
+        "predicted": 5.778000124479327
+      },
+      {
+        "row": 74,
+        "actual": 5.365585803047673,
+        "predicted": 5.365585803047672
+      },
+      {
+        "row": 30,
+        "actual": 8.991963684970267,
+        "predicted": 8.991963684970264
+      },
+      {
+        "row": 47,
+        "actual": 4.7810043931237844,
+        "predicted": 4.781004393123783
+      },
+      {
+        "row": 112,
+        "actual": 5.484993748977625,
+        "predicted": 5.484993748977624
+      },
+      {
+        "row": 153,
+        "actual": 10.260563042213267,
+        "predicted": 10.260563042213265
+      },
+      {
+        "row": 39,
+        "actual": 4.674349795117449,
+        "predicted": 4.674349795117447
+      },
+      {
+        "row": 160,
+        "actual": 8.932415767942452,
+        "predicted": 8.932415767942452
+      },
+      {
+        "row": 133,
+        "actual": 1.257749289744961,
+        "predicted": 1.2577492897449585
+      },
+      {
+        "row": 97,
+        "actual": 3.4542073879940935,
+        "predicted": 3.454207387994091
+      },
+      {
+        "row": 44,
+        "actual": 9.525947809196357,
+        "predicted": 9.525947809196357
+      },
+      {
+        "row": 83,
+        "actual": 6.198090417540219,
+        "predicted": 6.198090417540216
+      },
+      {
+        "row": 29,
+        "actual": 7.867418588488782,
+        "predicted": 7.86741858848878
+      },
+      {
+        "row": 107,
+        "actual": 4.37490132991818,
+        "predicted": 4.374901329918178
+      },
+      {
+        "row": 136,
+        "actual": 4.611392441728899,
+        "predicted": 4.611392441728899
+      },
+      {
+        "row": 73,
+        "actual": 9.338291013383225,
+        "predicted": 9.338291013383225
+      },
+      {
+        "row": 98,
+        "actual": 7.958276209865058,
+        "predicted": 7.958276209865057
+      }
+    ]
+  },
+  "confounded": {
+    "engineVersion": "0.1.0",
+    "options": {
+      "seed": 42,
+      "family": "algebra",
+      "maxTerms": 3,
+      "mode": "random"
+    },
+    "headers": [
+      "sensor_a",
+      "sensor_b",
+      "y"
+    ],
+    "rowCount": 140,
+    "split": {
+      "train": [
+        15,
+        39,
+        31,
+        122,
+        96,
+        48,
+        78,
+        27,
+        68,
+        115,
+        137,
+        2,
+        94,
+        112,
+        22,
+        66,
+        124,
+        80,
+        44,
+        121,
+        105,
+        43,
+        101,
+        9,
+        40,
+        132,
+        135,
+        17,
+        76,
+        10,
+        87,
+        42,
+        13,
+        65,
+        54,
+        25,
+        89,
+        72,
+        73,
+        50,
+        127,
+        103,
+        126,
+        34,
+        93,
+        129,
+        4,
+        14,
+        130,
+        128,
+        53,
+        51,
+        98,
+        45,
+        99,
+        16,
+        41,
+        92,
+        106,
+        97,
+        134,
+        90,
+        57,
+        133,
+        64,
+        139,
+        55,
+        82,
+        12,
+        49,
+        109,
+        74,
+        107,
+        102,
+        67,
+        46,
+        37,
+        28,
+        1,
+        8,
+        11,
+        77,
+        35,
+        123
+      ],
+      "validation": [
+        131,
+        79,
+        119,
+        111,
+        58,
+        118,
+        108,
+        26,
+        18,
+        104,
+        81,
+        70,
+        29,
+        20,
+        63,
+        125,
+        60,
+        120,
+        5,
+        110,
+        47,
+        33,
+        86,
+        52,
+        136,
+        19,
+        116,
+        59
+      ],
+      "test": [
+        88,
+        21,
+        7,
+        30,
+        3,
+        69,
+        6,
+        100,
+        56,
+        0,
+        75,
+        85,
+        138,
+        24,
+        38,
+        95,
+        113,
+        32,
+        61,
+        114,
+        83,
+        36,
+        71,
+        23,
+        91,
+        117,
+        62,
+        84
+      ]
+    },
+    "champion": {
+      "inputCount": 2,
+      "intercept": 1.9999999999999964,
+      "terms": [
+        {
+          "feature": {
+            "op": "raw",
+            "a": 0,
+            "label": "sensor_a",
+            "cost": 1,
+            "id": 0
+          },
+          "coefficient": 3.000000000000002
+        }
+      ],
+      "expression": "2 + 3 * sensor_a",
+      "complexity": 2
+    },
+    "validation": {
+      "mse": 7.247659566718046e-30,
+      "rmse": 2.6921477609369894e-15,
+      "r2": 1,
+      "invalid": false,
+      "n": 28
+    },
+    "test": {
+      "mse": 8.064694075696952e-30,
+      "rmse": 2.8398405018058587e-15,
+      "r2": 1,
+      "invalid": false,
+      "n": 28
+    },
+    "baseline": {
+      "mse": 13.489281345046594,
+      "rmse": 3.672775700345257,
+      "r2": -0.1023183076924945,
+      "invalid": false,
+      "n": 28
+    },
+    "status": "supported_on_this_split",
+    "warnings": [
+      "Association is not causation. No dimensional or physical constraints are enforced.",
+      "Final metrics are one held-out check, not independent replication. Adaptive reruns require fresh external validation.",
+      "Inputs sensor_a and sensor_b are strongly correlated. The data may not identify which relationship is causal.",
+      "The proposed experiment is far from observed combinations, even though each coordinate is in range. Correlations or physical constraints may make it infeasible."
+    ],
+    "experiment": {
+      "inputs": [
+        3.8742879601195455,
+        0.0063706617802381516
+      ],
+      "predictions": [
+        13.622863880358642,
+        2.019111985340711,
+        13.622863880358642,
+        13.622863880358642,
+        13.622863880358642,
+        2.019111985340715,
+        2.019111985340711,
+        2.019111985340711
+      ],
+      "disagreement": 11.60375189501793,
+      "bounds": [
+        [
+          0.0063706617802381516,
+          3.8742879601195455
+        ],
+        [
+          0.0063706617802381516,
+          3.8742879601195455
+        ]
+      ],
+      "nearestDistance": 0.500000026955959,
+      "offSupport": true,
+      "modelExpressions": [
+        "2 + 3 * sensor_a",
+        "2 + 3 * sensor_b",
+        "2 + 3 * sensor_a - 1.318714e-18 * sensor_a^2",
+        "2 + 3 * sensor_a - 1.318714e-18 * sensor_b^2",
+        "2 + 3 * sensor_a - 1.318714e-18 * sensor_a*sensor_b",
+        "2 - 9.070781e-17 * sensor_a^2 + 3 * sensor_b",
+        "2 + 3 * sensor_b - 1.318714e-18 * sensor_b^2",
+        "2 + 3 * sensor_b - 1.318714e-18 * sensor_a*sensor_b"
+      ],
+      "note": "Proposed measurement only. Disagreement is not a confidence interval. Check physical feasibility and safety independently."
+    },
+    "alternatives": [
+      {
+        "expression": "2 + 3 * sensor_a",
+        "validationRMSE": 2.6921477609369894e-15,
+        "complexity": 2,
+        "score": 0.001
+      },
+      {
+        "expression": "2 + 3 * sensor_b",
+        "validationRMSE": 2.6921477609369894e-15,
+        "complexity": 2,
+        "score": 0.001
+      },
+      {
+        "expression": "2 + 3 * sensor_a - 1.318714e-18 * sensor_a^2",
+        "validationRMSE": 2.6921477609369894e-15,
+        "complexity": 4,
+        "score": 0.002
+      },
+      {
+        "expression": "2 + 3 * sensor_a - 1.318714e-18 * sensor_b^2",
+        "validationRMSE": 2.6921477609369894e-15,
+        "complexity": 4,
+        "score": 0.002
+      },
+      {
+        "expression": "2 + 3 * sensor_a - 1.318714e-18 * sensor_a*sensor_b",
+        "validationRMSE": 2.6921477609369894e-15,
+        "complexity": 4,
+        "score": 0.002
+      },
+      {
+        "expression": "2 - 9.070781e-17 * sensor_a^2 + 3 * sensor_b",
+        "validationRMSE": 1.8406183341167355e-15,
+        "complexity": 4,
+        "score": 0.002
+      },
+      {
+        "expression": "2 + 3 * sensor_b - 1.318714e-18 * sensor_b^2",
+        "validationRMSE": 2.6921477609369894e-15,
+        "complexity": 4,
+        "score": 0.002
+      },
+      {
+        "expression": "2 + 3 * sensor_b - 1.318714e-18 * sensor_a*sensor_b",
+        "validationRMSE": 2.6921477609369894e-15,
+        "complexity": 4,
+        "score": 0.002
+      }
+    ],
+    "search": {
+      "evaluated": 120,
+      "limit": 1500,
+      "featureCount": 11,
+      "method": "Training-only QR; beam width 8; validation MSE / training variance + 0.0005 × complexity"
+    },
+    "testPoints": [
+      {
+        "row": 90,
+        "actual": 13.272637908346951,
+        "predicted": 13.272637908346956
+      },
+      {
+        "row": 23,
+        "actual": 12.352557193487883,
+        "predicted": 12.352557193487886
+      },
+      {
+        "row": 9,
+        "actual": 3.0825451016426086,
+        "predicted": 3.082545101642606
+      },
+      {
+        "row": 32,
+        "actual": 10.033350923098624,
+        "predicted": 10.033350923098626
+      },
+      {
+        "row": 5,
+        "actual": 12.380999027751386,
+        "predicted": 12.38099902775139
+      },
+      {
+        "row": 71,
+        "actual": 5.686623698100448,
+        "predicted": 5.686623698100447
+      },
+      {
+        "row": 8,
+        "actual": 4.909022350795567,
+        "predicted": 4.909022350795565
+      },
+      {
+        "row": 102,
+        "actual": 4.564190091565251,
+        "predicted": 4.56419009156525
+      },
+      {
+        "row": 58,
+        "actual": 13.413594767451286,
+        "predicted": 13.413594767451292
+      },
+      {
+        "row": 2,
+        "actual": 5.338003014214337,
+        "predicted": 5.338003014214336
+      },
+      {
+        "row": 77,
+        "actual": 5.750216099433601,
+        "predicted": 5.7502160994336
+      },
+      {
+        "row": 87,
+        "actual": 12.947668728418648,
+        "predicted": 12.947668728418654
+      },
+      {
+        "row": 140,
+        "actual": 6.489512023515999,
+        "predicted": 6.489512023515999
+      },
+      {
+        "row": 26,
+        "actual": 5.881914651952684,
+        "predicted": 5.881914651952683
+      },
+      {
+        "row": 40,
+        "actual": 10.708217518404126,
+        "predicted": 10.70821751840413
+      },
+      {
+        "row": 97,
+        "actual": 2.9578747246414423,
+        "predicted": 2.9578747246414396
+      },
+      {
+        "row": 115,
+        "actual": 8.618585613556206,
+        "predicted": 8.618585613556208
+      },
+      {
+        "row": 34,
+        "actual": 12.729251033626497,
+        "predicted": 12.7292510336265
+      },
+      {
+        "row": 63,
+        "actual": 3.8424346605315804,
+        "predicted": 3.8424346605315782
+      },
+      {
+        "row": 116,
+        "actual": 6.380876573733985,
+        "predicted": 6.380876573733985
+      },
+      {
+        "row": 85,
+        "actual": 5.120589063502848,
+        "predicted": 5.120589063502846
+      },
+      {
+        "row": 38,
+        "actual": 11.194227737374604,
+        "predicted": 11.194227737374607
+      },
+      {
+        "row": 73,
+        "actual": 5.627399042248726,
+        "predicted": 5.627399042248725
+      },
+      {
+        "row": 25,
+        "actual": 11.035568365827203,
+        "predicted": 11.035568365827206
+      },
+      {
+        "row": 93,
+        "actual": 9.710079061798751,
+        "predicted": 9.710079061798753
+      },
+      {
+        "row": 119,
+        "actual": 11.792146069929004,
+        "predicted": 11.792146069929007
+      },
+      {
+        "row": 64,
+        "actual": 9.52083070576191,
+        "predicted": 9.520830705761911
+      },
+      {
+        "row": 86,
+        "actual": 3.374025988392532,
+        "predicted": 3.374025988392529
+      }
+    ]
+  },
+  "noise": {
+    "engineVersion": "0.1.0",
+    "options": {
+      "seed": 42,
+      "family": "algebra",
+      "maxTerms": 3,
+      "mode": "random"
+    },
+    "headers": [
+      "x",
+      "y"
+    ],
+    "rowCount": 300,
+    "split": {
+      "train": [
+        154,
+        283,
+        47,
+        37,
+        34,
+        15,
+        65,
+        196,
+        235,
+        263,
+        86,
+        138,
+        272,
+        247,
+        120,
+        122,
+        150,
+        212,
+        121,
+        75,
+        217,
+        108,
+        68,
+        83,
+        59,
+        284,
+        241,
+        38,
+        236,
+        149,
+        40,
+        223,
+        182,
+        32,
+        140,
+        251,
+        203,
+        285,
+        261,
+        2,
+        291,
+        199,
+        244,
+        201,
+        256,
+        116,
+        177,
+        287,
+        0,
+        6,
+        22,
+        255,
+        112,
+        181,
+        278,
+        151,
+        170,
+        152,
+        123,
+        296,
+        87,
+        29,
+        288,
+        109,
+        193,
+        12,
+        103,
+        229,
+        128,
+        188,
+        184,
+        219,
+        238,
+        10,
+        206,
+        11,
+        111,
+        163,
+        190,
+        178,
+        58,
+        279,
+        173,
+        179,
+        209,
+        262,
+        147,
+        28,
+        268,
+        282,
+        246,
+        98,
+        99,
+        133,
+        205,
+        57,
+        97,
+        82,
+        253,
+        81,
+        100,
+        77,
+        69,
+        52,
+        117,
+        270,
+        280,
+        293,
+        220,
+        94,
+        124,
+        110,
+        176,
+        44,
+        290,
+        195,
+        202,
+        17,
+        53,
+        107,
+        101,
+        153,
+        106,
+        19,
+        257,
+        102,
+        115,
+        91,
+        49,
+        62,
+        231,
+        76,
+        5,
+        135,
+        274,
+        141,
+        200,
+        23,
+        30,
+        93,
+        156,
+        42,
+        166,
+        240,
+        237,
+        197,
+        89,
+        250,
+        232,
+        298,
+        273,
+        185,
+        242,
+        222,
+        67,
+        207,
+        45,
+        286,
+        225,
+        239,
+        175,
+        92,
+        161,
+        174,
+        4,
+        55,
+        269,
+        48,
+        169,
+        264,
+        276,
+        191,
+        265,
+        105,
+        36,
+        159,
+        260,
+        208,
+        131,
+        281
+      ],
+      "validation": [
+        66,
+        157,
+        24,
+        289,
+        146,
+        60,
+        165,
+        227,
+        39,
+        215,
+        125,
+        31,
+        79,
+        43,
+        136,
+        139,
+        35,
+        192,
+        25,
+        248,
+        95,
+        233,
+        292,
+        160,
+        243,
+        143,
+        20,
+        61,
+        113,
+        90,
+        187,
+        210,
+        148,
+        299,
+        221,
+        259,
+        158,
+        70,
+        267,
+        74,
+        127,
+        96,
+        204,
+        126,
+        224,
+        27,
+        186,
+        118,
+        41,
+        162,
+        64,
+        266,
+        258,
+        249,
+        211,
+        271,
+        114,
+        85,
+        3,
+        26
+      ],
+      "test": [
+        33,
+        245,
+        104,
+        230,
+        21,
+        228,
+        171,
+        168,
+        277,
+        18,
+        275,
+        71,
+        295,
+        129,
+        218,
+        189,
+        78,
+        54,
+        167,
+        63,
+        294,
+        145,
+        13,
+        9,
+        119,
+        84,
+        216,
+        130,
+        226,
+        46,
+        7,
+        144,
+        213,
+        50,
+        16,
+        73,
+        8,
+        164,
+        14,
+        234,
+        132,
+        1,
+        172,
+        194,
+        142,
+        56,
+        88,
+        214,
+        297,
+        72,
+        137,
+        252,
+        183,
+        80,
+        155,
+        51,
+        198,
+        254,
+        134,
+        180
+      ]
+    },
+    "champion": {
+      "inputCount": 1,
+      "intercept": 0.45599992989042687,
+      "terms": [
+        {
+          "feature": {
+            "op": "reciprocal",
+            "a": 0,
+            "label": "1/x",
+            "cost": 3,
+            "id": 3
+          },
+          "coefficient": -0.00042705715570850615
+        }
+      ],
+      "expression": "0.4559999 - 0.0004270572 * 1/x",
+      "complexity": 4
+    },
+    "validation": {
+      "mse": 0.10105451125565572,
+      "rmse": 0.3178907221918496,
+      "r2": 0.030493410435578183,
+      "invalid": false,
+      "n": 60
+    },
+    "test": {
+      "mse": 0.09537167084795871,
+      "rmse": 0.3088230413164774,
+      "r2": -0.0072074495571015085,
+      "invalid": false,
+      "n": 60
+    },
+    "baseline": {
+      "mse": 0.09547945397808619,
+      "rmse": 0.30899749833629103,
+      "r2": -0.008345732766735559,
+      "invalid": false,
+      "n": 60
+    },
+    "status": "not_supported",
+    "warnings": [
+      "Association is not causation. No dimensional or physical constraints are enforced.",
+      "Final metrics are one held-out check, not independent replication. Adaptive reruns require fresh external validation.",
+      "The selected model did not clear the held-out utility threshold: R² > 0.5 and at least 20% less MSE than the training-mean baseline."
+    ],
+    "experiment": null,
+    "alternatives": [
+      {
+        "expression": "0.4559999 - 0.0004270572 * 1/x",
+        "validationRMSE": 0.3178907221918496,
+        "complexity": 4,
+        "score": 1.3087354401083462
+      }
+    ],
+    "search": {
+      "evaluated": 15,
+      "limit": 1500,
+      "featureCount": 4,
+      "method": "Training-only QR; beam width 8; validation MSE / training variance + 0.0005 × complexity"
+    },
+    "testPoints": [
+      {
+        "row": 35,
+        "actual": 0.8531638868153095,
+        "predicted": 0.4509890979896423
+      },
+      {
+        "row": 247,
+        "actual": 0.8977606082335114,
+        "predicted": 0.4554955735426173
+      },
+      {
+        "row": 106,
+        "actual": 0.7664368441328406,
+        "predicted": 0.45326315137090717
+      },
+      {
+        "row": 232,
+        "actual": 0.7134771095588803,
+        "predicted": 0.45461164371833673
+      },
+      {
+        "row": 23,
+        "actual": 0.9118643945548683,
+        "predicted": 0.45414088019885374
+      },
+      {
+        "row": 230,
+        "actual": 0.36506481119431555,
+        "predicted": 0.4550219173427661
+      },
+      {
+        "row": 173,
+        "actual": 0.3090604499448091,
+        "predicted": 0.455408637263331
+      },
+      {
+        "row": 170,
+        "actual": 0.725080406293273,
+        "predicted": 0.4554953264243785
+      },
+      {
+        "row": 279,
+        "actual": 0.3677336082328111,
+        "predicted": 0.45515103435142
+      },
+      {
+        "row": 20,
+        "actual": 0.2394355572760105,
+        "predicted": 0.45544254910599513
+      },
+      {
+        "row": 277,
+        "actual": 0.06668971315957606,
+        "predicted": 0.45517207380425845
+      },
+      {
+        "row": 73,
+        "actual": 0.45664778910577297,
+        "predicted": 0.4502089451949095
+      },
+      {
+        "row": 297,
+        "actual": 0.8811838789843023,
+        "predicted": 0.45078652558660304
+      },
+      {
+        "row": 131,
+        "actual": 0.025585422990843654,
+        "predicted": 0.4540818167298881
+      },
+      {
+        "row": 220,
+        "actual": 0.11603862629272044,
+        "predicted": 0.45536246643626677
+      },
+      {
+        "row": 191,
+        "actual": 0.4763877964578569,
+        "predicted": 0.4555221057851346
+      },
+      {
+        "row": 80,
+        "actual": 0.09000854683108628,
+        "predicted": 0.4547362994084749
+      },
+      {
+        "row": 56,
+        "actual": 0.6099210190586746,
+        "predicted": 0.45315026719764717
+      },
+      {
+        "row": 169,
+        "actual": 0.5849687003064901,
+        "predicted": 0.4528925671892581
+      },
+      {
+        "row": 65,
+        "actual": 0.03553794254548848,
+        "predicted": 0.4553589587997223
+      },
+      {
+        "row": 296,
+        "actual": 0.6661543464288116,
+        "predicted": 0.4553844715506926
+      },
+      {
+        "row": 147,
+        "actual": 0.8490060116164386,
+        "predicted": 0.4550443388334241
+      },
+      {
+        "row": 15,
+        "actual": 0.8153398120775819,
+        "predicted": 0.4555079940721831
+      },
+      {
+        "row": 11,
+        "actual": 0.6373276938684285,
+        "predicted": 0.45518633042629725
+      },
+      {
+        "row": 121,
+        "actual": 0.7348655953537673,
+        "predicted": 0.45541924739840006
+      },
+      {
+        "row": 86,
+        "actual": 0.4681087345816195,
+        "predicted": 0.4547327673470449
+      },
+      {
+        "row": 218,
+        "actual": 0.07765205902978778,
+        "predicted": 0.454030050493369
+      },
+      {
+        "row": 132,
+        "actual": 0.638956872979179,
+        "predicted": 0.45521529539842576
+      },
+      {
+        "row": 228,
+        "actual": 0.5999458897858858,
+        "predicted": 0.45523100330885397
+      },
+      {
+        "row": 48,
+        "actual": 0.968529544537887,
+        "predicted": 0.45500059892678363
+      },
+      {
+        "row": 9,
+        "actual": 0.4849235664587468,
+        "predicted": 0.4550269038358829
+      },
+      {
+        "row": 146,
+        "actual": 0.12757349526509643,
+        "predicted": 0.45555663382221573
+      },
+      {
+        "row": 215,
+        "actual": 0.3518373838160187,
+        "predicted": 0.4550980516660161
+      },
+      {
+        "row": 52,
+        "actual": 0.5708214677870274,
+        "predicted": 0.4540013706239515
+      },
+      {
+        "row": 18,
+        "actual": 0.5905772484838963,
+        "predicted": 0.4555222930216053
+      },
+      {
+        "row": 75,
+        "actual": 0.37237755209207535,
+        "predicted": 0.45367956274706306
+      },
+      {
+        "row": 10,
+        "actual": 0.8443228788673878,
+        "predicted": 0.455228666106784
+      },
+      {
+        "row": 166,
+        "actual": 0.29667201451957226,
+        "predicted": 0.45549113738139857
+      },
+      {
+        "row": 16,
+        "actual": 0.37359253340400755,
+        "predicted": 0.45459686852596753
+      },
+      {
+        "row": 236,
+        "actual": 0.2501087069977075,
+        "predicted": 0.4552940426826497
+      },
+      {
+        "row": 134,
+        "actual": 0.08686204929836094,
+        "predicted": 0.4555544146477851
+      },
+      {
+        "row": 3,
+        "actual": 0.8650832523126155,
+        "predicted": 0.45553480887110387
+      },
+      {
+        "row": 174,
+        "actual": 0.8251366214826703,
+        "predicted": 0.45412037931785953
+      },
+      {
+        "row": 196,
+        "actual": 0.8558525780681521,
+        "predicted": 0.4526747353575828
+      },
+      {
+        "row": 144,
+        "actual": 0.047875091433525085,
+        "predicted": 0.45471825926325105
+      },
+      {
+        "row": 58,
+        "actual": 0.5515488011296839,
+        "predicted": 0.44996478688097025
+      },
+      {
+        "row": 90,
+        "actual": 0.8050576611422002,
+        "predicted": 0.4550276104182926
+      },
+      {
+        "row": 216,
+        "actual": 0.17042699293233454,
+        "predicted": 0.45531506608969896
+      },
+      {
+        "row": 299,
+        "actual": 0.06366584519855678,
+        "predicted": 0.45555493323136514
+      },
+      {
+        "row": 74,
+        "actual": 0.723466468276456,
+        "predicted": 0.4543783068719245
+      },
+      {
+        "row": 139,
+        "actual": 0.22933277091942728,
+        "predicted": 0.45526012751131695
+      },
+      {
+        "row": 254,
+        "actual": 0.06558127561584115,
+        "predicted": 0.4504635278092235
+      },
+      {
+        "row": 185,
+        "actual": 0.03446027101017535,
+        "predicted": 0.45553012697763334
+      },
+      {
+        "row": 82,
+        "actual": 0.992625588318333,
+        "predicted": 0.4555673672772663
+      },
+      {
+        "row": 157,
+        "actual": 0.8449073319789022,
+        "predicted": 0.45521857653236814
+      },
+      {
+        "row": 53,
+        "actual": 0.08638178976252675,
+        "predicted": 0.447885798620951
+      },
+      {
+        "row": 200,
+        "actual": 0.07341091730631888,
+        "predicted": 0.45543631737401824
+      },
+      {
+        "row": 256,
+        "actual": 0.20601965161040425,
+        "predicted": 0.4554686848580485
+      },
+      {
+        "row": 136,
+        "actual": 0.8461386854760349,
+        "predicted": 0.4553545130415983
+      },
+      {
+        "row": 182,
+        "actual": 0.23795397393405437,
+        "predicted": 0.4522913827770711
+      }
+    ]
+  },
+  "nist": {
+    "engineVersion": "0.1.0",
+    "options": {
+      "seed": 42,
+      "family": "algebra",
+      "maxTerms": 3,
+      "mode": "random"
+    },
+    "headers": [
+      "nist_measurement",
+      "customer_measurement"
+    ],
+    "rowCount": 36,
+    "split": {
+      "train": [
+        20,
+        22,
+        8,
+        14,
+        31,
+        9,
+        3,
+        27,
+        1,
+        11,
+        2,
+        18,
+        30,
+        16,
+        26,
+        33,
+        0,
+        19,
+        13,
+        10,
+        4
+      ],
+      "validation": [
+        25,
+        28,
+        32,
+        6,
+        12,
+        23,
+        24,
+        17
+      ],
+      "test": [
+        7,
+        34,
+        5,
+        35,
+        29,
+        15,
+        21
+      ]
+    },
+    "champion": {
+      "inputCount": 1,
+      "intercept": -0.5490946900551421,
+      "terms": [
+        {
+          "feature": {
+            "op": "raw",
+            "a": 0,
+            "label": "nist_measurement",
+            "cost": 1,
+            "id": 0
+          },
+          "coefficient": 1.002975695680335
+        }
+      ],
+      "expression": "-0.5490947 + 1.002976 * nist_measurement",
+      "complexity": 2
+    },
+    "validation": {
+      "mse": 1.3150962055944015,
+      "rmse": 1.1467764409833336,
+      "r2": 0.9999899573753679,
+      "invalid": false,
+      "n": 8
+    },
+    "test": {
+      "mse": 1.0743869674300945,
+      "rmse": 1.0365263949509895,
+      "r2": 0.9999908818179926,
+      "invalid": false,
+      "n": 7
+    },
+    "baseline": {
+      "mse": 127681.05714285711,
+      "rmse": 357.3248621952538,
+      "r2": -0.08361247224525181,
+      "invalid": false,
+      "n": 7
+    },
+    "status": "supported_on_this_split",
+    "warnings": [
+      "Association is not causation. No dimensional or physical constraints are enforced.",
+      "Final metrics are one held-out check, not independent replication. Adaptive reruns require fresh external validation.",
+      "Repeated input groups are kept together; partition row percentages may differ from 60/20/20."
+    ],
+    "experiment": {
+      "inputs": [
+        4.190166623704135
+      ],
+      "predictions": [
+        3.6535405943710337,
+        3.6063419325782755,
+        3.6142503116268614,
+        3.547114076435035,
+        3.3818267538777027,
+        3.6081503873951064,
+        3.4292977782449325,
+        74.2284813260013
+      ],
+      "disagreement": 70.8466545721236,
+      "bounds": [
+        [
+          0.2,
+          995.8
+        ]
+      ],
+      "nearestDistance": 0.0038069170587626913,
+      "offSupport": false,
+      "modelExpressions": [
+        "-0.5490947 + 1.002976 * nist_measurement",
+        "-0.5981831 + 1.003429 * nist_measurement - 5.036611e-7 * nist_measurement^2",
+        "-0.5895128 + 1.003245 * nist_measurement - 3.444059e-10 * nist_measurement^3",
+        "-0.6897528 + 1.003185 * nist_measurement + 0.139764 * 1/nist_measurement",
+        "-0.8711853 + 1.004513 * nist_measurement - 0.000001402776 * nist_measurement^2 + 0.1841931 * 1/nist_measurement",
+        "-0.5961841 + 1.003383 * nist_measurement - 3.731615e-7 * nist_measurement^2 - 9.134547e-11 * nist_measurement^3",
+        "-0.8179636 + 1.003875 * nist_measurement - 8.228999e-10 * nist_measurement^3 + 0.1712015 * 1/nist_measurement",
+        "78.78192 + 0.002372717 * nist_measurement^2 - 0.00000149854 * nist_measurement^3 - 19.25377 * 1/nist_measurement"
+      ],
+      "note": "Proposed measurement only. Disagreement is not a confidence interval. Check physical feasibility and safety independently."
+    },
+    "alternatives": [
+      {
+        "expression": "-0.5490947 + 1.002976 * nist_measurement",
+        "validationRMSE": 1.1467764409833336,
+        "complexity": 2,
+        "score": 0.00101253242012952
+      },
+      {
+        "expression": "-0.5981831 + 1.003429 * nist_measurement - 5.036611e-7 * nist_measurement^2",
+        "validationRMSE": 1.1230067138528579,
+        "complexity": 4,
+        "score": 0.0020120182746928656
+      },
+      {
+        "expression": "-0.5895128 + 1.003245 * nist_measurement - 3.444059e-10 * nist_measurement^3",
+        "validationRMSE": 1.1156012726747309,
+        "complexity": 5,
+        "score": 0.002511860293129852
+      },
+      {
+        "expression": "-0.6897528 + 1.003185 * nist_measurement + 0.139764 * 1/nist_measurement",
+        "validationRMSE": 1.1229785321416224,
+        "complexity": 5,
+        "score": 0.0025120176715062717
+      },
+      {
+        "expression": "-0.8711853 + 1.004513 * nist_measurement - 0.000001402776 * nist_measurement^2 + 0.1841931 * 1/nist_measurement",
+        "validationRMSE": 1.0406409004502943,
+        "complexity": 7,
+        "score": 0.0035103199882504364
+      },
+      {
+        "expression": "-0.5961841 + 1.003383 * nist_measurement - 3.731615e-7 * nist_measurement^2 - 9.134547e-11 * nist_measurement^3",
+        "validationRMSE": 1.1209001073667177,
+        "complexity": 7,
+        "score": 0.0035119732277153685
+      },
+      {
+        "expression": "-0.8179636 + 1.003875 * nist_measurement - 8.228999e-10 * nist_measurement^3 + 0.1712015 * 1/nist_measurement",
+        "validationRMSE": 1.0356301442080316,
+        "complexity": 8,
+        "score": 0.004010220844636774
+      },
+      {
+        "expression": "78.78192 + 0.002372717 * nist_measurement^2 - 0.00000149854 * nist_measurement^3 - 19.25377 * 1/nist_measurement",
+        "validationRMSE": 37.799002844177814,
+        "complexity": 9,
+        "score": 0.01811564147011481
+      }
+    ],
+    "search": {
+      "evaluated": 15,
+      "limit": 1500,
+      "featureCount": 4,
+      "method": "Training-only QR; beam width 8; validation MSE / training variance + 0.0005 × complexity"
+    },
+    "testPoints": [
+      {
+        "row": 9,
+        "actual": 998.5,
+        "predicted": 998.7155909162627
+      },
+      {
+        "row": 36,
+        "actual": 449.2,
+        "predicted": 449.68669510084726
+      },
+      {
+        "row": 7,
+        "actual": 228.1,
+        "predicted": 226.62490038154075
+      },
+      {
+        "row": 37,
+        "actual": 0.2,
+        "predicted": -0.047606842214974576
+      },
+      {
+        "row": 31,
+        "actual": 778.9,
+        "predicted": 780.7689722449259
+      },
+      {
+        "row": 17,
+        "actual": 339.3,
+        "predicted": 338.45669044989813
+      },
+      {
+        "row": 23,
+        "actual": 888.8,
+        "predicted": 889.6921327958103
+      }
+    ]
+  }
+}

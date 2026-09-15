@@ -1,0 +1,15 @@
+{
+  "reference": "NIST Norris observed ozone-monitor calibration data",
+  "source": "https://www.itl.nist.gov/div898/strd/lls/data/LINKS/DATA/Norris.dat",
+  "source_handling": "36 numeric pairs transcribed from retrieved NIST text, columns reordered x,y; no original-file hash claimed",
+  "verification": "Independent NumPy least-squares on exactly the exported training indices; not an independent data collection",
+  "numpy_coefficients": [
+    -0.5490946900552756,
+    1.002975695680335
+  ],
+  "independent_test_rmse": 1.0365263949509784,
+  "engine_test_rmse": 1.0365263949509895,
+  "engine_test_r2": 0.9999908818179926,
+  "test_rows": 7,
+  "matches": true
+}
