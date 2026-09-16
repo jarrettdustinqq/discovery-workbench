@@ -1,0 +1,5 @@
+Execute pm25-utility-v1 once.
+Protocol commit: c2238efdfe1f7964307ea219e1206df2bb373cd4
+Implementation commit: 046792375efc1859521886de56c70c478afceee3
+No test data have been inspected during preparation.
+Preserve the result regardless of outcome; do not rerun for a better score.
