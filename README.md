@@ -2,7 +2,7 @@
 
 A local-first research instrument: find compact mathematical relationships, challenge them on withheld observations, and propose a measurement that could distinguish competing explanations.
 
-**Release status:** candidate 0.1.0; see `evidence/` and the release record for verified deployment/browser status. This software is an AI-assisted implementation of bounded symbolic regression, not a general-purpose autonomous scientist, a frontier-model interface, or a claim of new scientific discovery.
+**Release status:** 0.1.0 research preview, publicly deployed and tested. [Open the application](https://jarrettdustinqq.github.io/discovery-workbench/) · [Verified hosted test run](https://github.com/jarrettdustinqq/discovery-workbench/actions/runs/35038200654). The run passed 35 engine tests and 21 browser checks in each of Chromium and WebKit. See `evidence/release.json` for provenance and limits. This software is an AI-assisted implementation of bounded symbolic regression, not a general-purpose autonomous scientist, a frontier-model interface, or a claim of new scientific discovery.
 
 ## Run
 
@@ -22,7 +22,7 @@ node cli.mjs examples/norris.csv > reference-result.json
 node --test tests/engine.test.mjs
 ```
 
-Node 22 was used for verification. The application has no runtime npm or Python dependencies. Browser regression tests use a separately available Playwright installation and Chromium; they are not required to use the app.
+Node 22 was used for verification. The application has no runtime npm or Python dependencies. Browser regression tests use a separately available Playwright installation and Chromium or WebKit; they are not required to use the app.
 
 ## Data contract
 
@@ -65,7 +65,8 @@ The tool's default split fits only training rows and evaluates seven final rows 
 
 ```sh
 node --test tests/engine.test.mjs
-python3 tests/browser_test.py --url https://jarrettdustinqq.github.io/discovery-workbench/
+python3 tests/browser_test.py --browser-engine chromium --url https://jarrettdustinqq.github.io/discovery-workbench/
+python3 tests/browser_test.py --browser-engine webkit --url https://jarrettdustinqq.github.io/discovery-workbench/
 ```
 
 Core regressions include malformed input, grouped splits, determinism, polynomial/sinusoidal recovery, collinearity, constant targets, noise, undefined final-domain expressions, CLI parity, and final-target poisoning. Browser tests exercise demo runs, CSV selection, exports, new measurements, invalidation, cancellation, narrow viewport, cross-origin requests and uncaught exceptions. A test file alone is not proof it ran; consult the retained evidence.

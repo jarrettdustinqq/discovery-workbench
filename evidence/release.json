@@ -1,0 +1,42 @@
+{
+  "version": "0.1.0",
+  "status": "published research preview",
+  "verified_at_utc": "2026-09-16T00:04:09.815287+00:00",
+  "owner": "jarrettdustinqq",
+  "repository": "https://github.com/jarrettdustinqq/discovery-workbench",
+  "application": "https://jarrettdustinqq.github.io/discovery-workbench/",
+  "tested_commit": "ba1e12f4d241bf288ab0b964f567244aef6f3ead",
+  "verification_run": "https://github.com/jarrettdustinqq/discovery-workbench/actions/runs/35038200654",
+  "verification_run_id": 35038200654,
+  "verification_conclusion": "success",
+  "engine_tests": {
+    "passed": 35,
+    "failed": 0
+  },
+  "browser_tests": {
+    "chromium": {
+      "passed": 21,
+      "version": "151.0.7922.34"
+    },
+    "webkit": {
+      "passed": 21,
+      "version": "26.5"
+    }
+  },
+  "runtime_file_sha256": {
+    "index.html": "53a6fe21bf6f76f700d69df15266cf37be0f9e469705e738d95ee36a54f82780",
+    "styles.css": "9bc046a3079d1bae5edf26251d2d20c1d04c7df282c32f6dc74cb4f70d84d9f3",
+    "app.mjs": "89888ce8e4337260e2486d4173a333b00c9e0359a06ac331c17ad8e3a24e8ff7",
+    "engine.mjs": "58cf24333025f2ce7a138390aca557a802dc62746a81a735d34466d7b54fe3f7",
+    "worker.mjs": "d7354fe051af9bf552715a59fea1cb5e728a42785ea962cb202222a0ceb98edc"
+  },
+  "earlier_failed_run": "https://github.com/jarrettdustinqq/discovery-workbench/actions/runs/35037919109",
+  "repair": "Replaced CSP-incompatible test assertion; enforced pipefail. Application runtime and CSP unchanged.",
+  "limits": [
+    "Bounded fixed-grammar symbolic regression, not general superintelligence or novel physics.",
+    "Synthetic recovery and one NIST reference partition do not establish scientific novelty or external utility.",
+    "WebKit was tested on Linux, not a physical iPhone or Safari app.",
+    "Browser layout overflow checks passed; screenshots were not visually reviewed.",
+    "No recurring operation, paid service, account credential exposure, external user adoption, or revenue is claimed."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "url": "https://jarrettdustinqq.github.io/discovery-workbench/",
+  "checks": [
+    "application title",
+    "polynomial demo supported",
+    "recovered square term visible",
+    "report exports dataset SHA-256",
+    "report includes reproducible input",
+    "final error low",
+    "confounding warning visible",
+    "next experiment visible",
+    "noise is not supported",
+    "malformed data fails visibly",
+    "stale result hidden on input change",
+    "local CSV executes",
+    "new contradictory measurement is shown",
+    "observation appended",
+    "result invalidated after new evidence",
+    "cancellation returns to idle",
+    "mobile viewport has no horizontal overflow",
+    "mobile results have no horizontal overflow",
+    "no cross-origin requests",
+    "no upload or write requests",
+    "no uncaught browser errors"
+  ],
+  "passed": 21,
+  "errors": [],
+  "requests": [
+    {
+      "url": "https://jarrettdustinqq.github.io/discovery-workbench/",
+      "method": "GET"
+    },
+    {
+      "url": "https://jarrettdustinqq.github.io/discovery-workbench/styles.css",
+      "method": "GET"
+    },
+    {
+      "url": "https://jarrettdustinqq.github.io/discovery-workbench/app.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "https://jarrettdustinqq.github.io/discovery-workbench/engine.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "https://jarrettdustinqq.github.io/discovery-workbench/worker.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "https://jarrettdustinqq.github.io/discovery-workbench/engine.mjs",
+      "method": "GET"
+    }
+  ],
+  "browser": "26.5",
+  "engine": "webkit"
+}

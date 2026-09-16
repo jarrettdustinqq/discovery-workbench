@@ -1,0 +1,32 @@
+[
+  {
+    "path": "index.html",
+    "status": 200,
+    "sha256": "53a6fe21bf6f76f700d69df15266cf37be0f9e469705e738d95ee36a54f82780",
+    "matches": true
+  },
+  {
+    "path": "styles.css",
+    "status": 200,
+    "sha256": "9bc046a3079d1bae5edf26251d2d20c1d04c7df282c32f6dc74cb4f70d84d9f3",
+    "matches": true
+  },
+  {
+    "path": "app.mjs",
+    "status": 200,
+    "sha256": "89888ce8e4337260e2486d4173a333b00c9e0359a06ac331c17ad8e3a24e8ff7",
+    "matches": true
+  },
+  {
+    "path": "engine.mjs",
+    "status": 200,
+    "sha256": "58cf24333025f2ce7a138390aca557a802dc62746a81a735d34466d7b54fe3f7",
+    "matches": true
+  },
+  {
+    "path": "worker.mjs",
+    "status": 200,
+    "sha256": "d7354fe051af9bf552715a59fea1cb5e728a42785ea962cb202222a0ceb98edc",
+    "matches": true
+  }
+]
