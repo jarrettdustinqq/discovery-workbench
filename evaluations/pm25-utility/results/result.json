@@ -1,0 +1,102 @@
+{
+  "evaluation": "pm25-utility-v1",
+  "completed_at": "2026-09-16T00:24:56.837100+00:00",
+  "evaluation_commit": "5f972fbd586a0cd2f24f7a8f7d1f1df8c7241356",
+  "protocol_commit": "c2238efdfe1f7964307ea219e1206df2bb373cd4",
+  "freeze_sha256": "c1b07e58796b8262e073984b7972feb42b72874df8aa45008631b900af524966",
+  "release_commit": "191245df224bdbdb585848997eee0ba7a50ae121",
+  "engine_sha256": "58cf24333025f2ce7a138390aca557a802dc62746a81a735d34466d7b54fe3f7",
+  "primary_baseline": "hgb_equal",
+  "sites": {
+    "Dongsi": {
+      "coverage": {"station":"Dongsi","scheduled":1464,"eligible":1381,"excluded":83,"nonfinite_or_missing":83,"finite_out_of_range":0,"coverage":0.9433060109289617,"start":"2016-01-01 00:00:00","end":"2016-12-31 18:00:00"},
+      "source_station_sha256": "9c0020214425e5ee2a64d42f97a1f632e1d8f6b53ad50edd85a686cc7999f27e",
+      "metrics": {
+        "workbench":{"n":1381,"mse":468.66974176201296,"rmse":21.648781530654627,"mae":10.402775500940054,"r2":0.9349948667962776},
+        "persistence":{"n":1381,"mse":465.9217958001448,"rmse":21.58522169911963,"mae":10.254887762490949,"r2":0.9353760106538186},
+        "median":{"n":1381,"mse":7515.667632150616,"rmse":86.69295030249354,"mae":57.81535119478639,"r2":-0.04243336407013221},
+        "ridge_equal":{"n":1381,"mse":418.5307052010682,"rmse":20.458023003239298,"mae":9.733614514711546,"r2":0.9419492196377837},
+        "hgb_equal":{"n":1381,"mse":604.9595879208046,"rmse":24.59592624644993,"mae":11.319254820357715,"r2":0.9160912790149144},
+        "ridge_full":{"n":1381,"mse":421.3440463417538,"rmse":20.52666671288239,"mae":9.791140578645162,"r2":0.9415590053796362},
+        "hgb_full":{"n":1381,"mse":528.0034602656099,"rmse":22.978325880394546,"mae":10.823806612050399,"r2":0.9267651990129518}
+      },
+      "tail_metrics": {
+        "workbench":{"n":120,"mse":3325.4458994324696,"rmse":57.666679282168396,"mae":28.056208071890875,"r2":0.5643170230619845},
+        "persistence":{"n":120,"mse":3246.258333333333,"rmse":56.97594521667309,"mae":27.158333333333335,"r2":0.5746917744721444},
+        "median":{"n":120,"mse":60498.225,"rmse":245.96386929791132,"mae":229.925,"r2":-6.926169170866445},
+        "ridge_equal":{"n":120,"mse":3045.7760289932075,"rmse":55.18854979969312,"mae":26.67338802844863,"r2":0.6009579444294442},
+        "hgb_equal":{"n":120,"mse":4976.353199157593,"rmse":70.54327182061796,"mae":38.58169348187993,"r2":0.34802356084818153},
+        "ridge_full":{"n":120,"mse":3081.4960030410707,"rmse":55.51122411765994,"mae":27.171468109382378,"r2":0.5962780954407785},
+        "hgb_full":{"n":120,"mse":4156.668020744274,"rmse":64.47222673945949,"mae":34.741110152100326,"r2":0.4554145362190426}
+      },
+      "out_of_training_range_rows":4,
+      "unclipped_negative_counts":{"workbench":0,"persistence":0,"median":0,"ridge_equal":2,"hgb_equal":0,"ridge_full":2,"hgb_full":0},
+      "nonfinite_prediction_count":0,
+      "first_origin":"2016-01-01T00:00:00",
+      "last_origin":"2016-12-31T18:00:00"
+    },
+    "Dingling": {
+      "coverage":{"station":"Dingling","scheduled":1464,"eligible":1382,"excluded":82,"nonfinite_or_missing":82,"finite_out_of_range":0,"coverage":0.9439890710382514,"start":"2016-01-01 00:00:00","end":"2016-12-31 18:00:00"},
+      "source_station_sha256":"3d8dff81f18a80d9f455876a785642bffe1e9b9924ec1e6b7ce8cca790432eeb",
+      "metrics": {
+        "workbench":{"n":1382,"mse":808.2098609374947,"rmse":28.429032008450353,"mae":9.308474388890364,"r2":0.8339583294126104},
+        "persistence":{"n":1382,"mse":810.9710564399421,"rmse":28.477553554333667,"mae":8.895803183791607,"r2":0.8333910590337104},
+        "median":{"n":1382,"mse":4880.56512301013,"rmse":69.86104152537472,"mae":49.78654124457308,"r2":-0.0026816370381106402},
+        "ridge_equal":{"n":1382,"mse":793.835529589088,"rmse":28.175087037826305,"mae":9.265321775903946,"r2":0.836911446054738},
+        "hgb_equal":{"n":1382,"mse":847.6354245752765,"rmse":29.114179098426877,"mae":9.723003215580748,"r2":0.8258585934818049},
+        "ridge_full":{"n":1382,"mse":793.530691149578,"rmse":28.169676802362822,"mae":9.299249258972392,"r2":0.8369740732091465},
+        "hgb_full":{"n":1382,"mse":821.8951358041273,"rmse":28.668713535911014,"mae":9.475279420535774,"r2":0.8311467751231496}
+      },
+      "tail_metrics": {
+        "workbench":{"n":60,"mse":13016.95173509795,"rmse":114.09185656784602,"mae":33.06200394815271,"r2":-0.1680717846986397},
+        "persistence":{"n":60,"mse":13080.183333333332,"rmse":114.36862914861457,"mae":32.65,"r2":-0.1737458508934926},
+        "median":{"n":60,"mse":60147.166666666664,"rmse":245.24919299901205,"mae":221.36666666666667,"r2":-4.397285765719343},
+        "ridge_equal":{"n":60,"mse":12991.960629249545,"rmse":113.98228208475888,"mae":33.764865535587276,"r2":-0.16582921622300884},
+        "hgb_equal":{"n":60,"mse":13796.126889870347,"rmse":117.45691503640961,"mae":42.07960645789614,"r2":-0.23799080507679937},
+        "ridge_full":{"n":60,"mse":13022.192917101833,"rmse":114.11482338899637,"mae":34.27831045237829,"r2":-0.16854210040248452},
+        "hgb_full":{"n":60,"mse":13551.221865794856,"rmse":116.40971551290234,"mae":39.5140390903045,"r2":-0.21601433513397916}
+      },
+      "out_of_training_range_rows":4,
+      "unclipped_negative_counts":{"workbench":0,"persistence":0,"median":0,"ridge_equal":6,"hgb_equal":0,"ridge_full":6,"hgb_full":0},
+      "nonfinite_prediction_count":0,
+      "first_origin":"2016-01-01T00:00:00",
+      "last_origin":"2016-12-31T18:00:00"
+    }
+  },
+  "site_balanced_metrics": {
+    "workbench":{"rmse":25.267366331886546,"mae":9.85562494491521},
+    "persistence":{"rmse":25.26749742495373,"mae":9.575345473141278},
+    "median":{"rmse":78.72811681718528,"mae":53.80094621967973},
+    "ridge_equal":{"rmse":24.62078628710054,"mae":9.499468145307745},
+    "hgb_equal":{"rmse":26.949907351381388,"mae":10.521129017969232},
+    "ridge_full":{"rmse":24.64624451606504,"mae":9.545194918808777},
+    "hgb_full":{"rmse":25.97978633543526,"mae":10.149543016293087}
+  },
+  "bootstrap_workbench_over_baseline":{"ratio":0.9375678365956018,"ci95":[0.855168919738908,0.9734782148255136],"replicates":4000,"seed":20260915,"block_days":7,"calendar_blocks":53,"nonempty_blocks_by_site":[53,53],"joint_resampling_across_sites":true},
+  "gate_comparisons":[
+    {"site":"Dongsi","tool_rmse":21.648781530654627,"baseline_rmse":24.59592624644993,"persistence_rmse":21.58522169911963,"tool_mae":10.402775500940054,"baseline_mae":11.319254820357715,"persistence_mae":10.254887762490949},
+    {"site":"Dingling","tool_rmse":28.429032008450353,"baseline_rmse":29.114179098426877,"persistence_rmse":28.477553554333667,"tool_mae":9.308474388890364,"baseline_mae":9.723003215580748,"persistence_mae":8.895803183791607}
+  ],
+  "useful_advantage":false,
+  "decision":"no demonstrated useful advantage; stop tool expansion",
+  "predictions_csv_sha256":"8f6ba82d29fb7848a1ab3de26a819ce97b5628a1d5cdc67b54d3ceada7f76f93",
+  "prediction_rows":2763,
+  "extraction_log":[
+    {"station":"Aotizhongxin","time":"2026-09-16T00:24:53.265101+00:00","phase":"development"},
+    {"station":"Dongsi","time":"2026-09-16T00:24:56.486177+00:00","phase":"test"},
+    {"station":"Dingling","time":"2026-09-16T00:24:56.610446+00:00","phase":"test"}
+  ],
+  "independent_python_prediction_check":"passed",
+  "csv_metric_readback":"passed",
+  "protocol_deviations":[],
+  "source_url":"https://archive.ics.uci.edu/static/public/501/beijing%2Bmulti%2Bsite%2Bair%2Bquality%2Bdata.zip",
+  "data_license":"CC BY 4.0; Song Chen (2017), DOI 10.24432/C5RK5G",
+  "limits":[
+    "Retrospective data, not a prospective intervention or new scientific discovery.",
+    "Separate later sites within one network; shared weather and residual temporal dependence remain.",
+    "Complete-case evaluation excludes missing readings; source publication latency was not measured.",
+    "One-hour-ahead predictions made at six-hourly origins, not an all-hours evaluation.",
+    "Predictive equation utility only: the proposed-experiment component was not field-tested.",
+    "No runtime changes, main updates, deployment, outreach, paid APIs, artifact/cache uploads or schedules."
+  ]
+}
