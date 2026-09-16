@@ -18,7 +18,9 @@ jobs:
         with:
           node-version: '22'
       - name: Test numeric engine
-        run: node --test tests/engine.test.mjs | tee evidence/engine-tests.txt
+        run: |
+          set -o pipefail
+          node --test tests/engine.test.mjs | tee evidence/engine-tests.txt
       - name: Install ephemeral browser test dependencies
         run: |
           python3 -m venv "$RUNNER_TEMP/browser-venv"

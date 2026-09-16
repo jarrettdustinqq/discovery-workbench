@@ -1,6 +1,6 @@
 """Real Chromium smoke/regression tests. Uses an existing Playwright installation."""
 import argparse, json, pathlib, subprocess, time, urllib.parse
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, expect
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 p=argparse.ArgumentParser(); p.add_argument('--url'); p.add_argument('--browser-engine', choices=['chromium','webkit'], default='chromium'); p.add_argument('--browser-executable'); p.add_argument('--output', default=str(ROOT/'evidence/browser-tests.json')); args=p.parse_args()
 server=None
@@ -12,6 +12,7 @@ checks=[]; requests=[]; errors=[]
 def check(name, value):
     assert value, name
     checks.append(name)
+    print("PASS "+name,flush=True)
 try:
   with sync_playwright() as pw:
     launch={'headless':True}
@@ -42,7 +43,7 @@ try:
     check('stale result hidden on input change',page.locator('#results').is_hidden())
     csv='x,y\n'+'\n'.join(f'{i/10},{2+3*i/10}' for i in range(80))
     page.locator('#csv-file').set_input_files({'name':'local.csv','mimeType':'text/csv','buffer':csv.encode()})
-    page.wait_for_function("document.querySelector('#csv').value.includes('7.9,')")
+    expect(page.locator("#csv")).to_have_value(csv)
     page.locator('#run').click();page.locator('#results:not([hidden])').wait_for(timeout=10000)
     check('local CSV executes',page.locator('#verdict').inner_text()=='Supported on this split')
     page.locator('#challenge-x').fill('1.25');page.locator('#challenge-y').fill('99');page.locator('#challenge').click()
