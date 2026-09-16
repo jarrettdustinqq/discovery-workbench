@@ -1,0 +1,36 @@
+name: Frozen PM2.5 utility test
+on:
+  push:
+    branches: ['utility/pm25-20260915']
+    paths: ['evaluations/pm25-utility/RUN_ONCE']
+permissions:
+  contents: read
+concurrency:
+  group: discovery-workbench-pm25-utility
+  cancel-in-progress: false
+jobs:
+  evaluate:
+    if: github.repository == 'jarrettdustinqq/discovery-workbench' && github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+      PYTHONUNBUFFERED: '1'
+      PIP_NO_CACHE_DIR: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned ephemeral evaluation dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m venv "$RUNNER_TEMP/utility-venv"
+          "$RUNNER_TEMP/utility-venv/bin/pip" install --disable-pip-version-check --no-cache-dir -r evaluations/pm25-utility/requirements.txt > "$RUNNER_TEMP/install.log" 2>&1 || { tail -40 "$RUNNER_TEMP/install.log"; exit 1; }
+      - name: Verify the evaluation harness before reading public measurements
+        run: '"$RUNNER_TEMP/utility-venv/bin/python" evaluations/pm25-utility/test_core.py'
+      - name: Freeze fitted models then score untouched external observations
+        run: '"$RUNNER_TEMP/utility-venv/bin/python" evaluations/pm25-utility/run_eval.py'
