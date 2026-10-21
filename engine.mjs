@@ -26,20 +26,21 @@ export function parseCSV(text) {
   if(typeof text!=='string') throw Error('CSV must be text.');
   if(text.length>MAX_BYTES || new TextEncoder().encode(text).length>MAX_BYTES) throw Error('CSV exceeds the 1 MiB size limit.');
   text=text.replace(/^\uFEFF/,'');
-  const records=[]; let row=[],field='',quoted=false,closed=false;
+  const records=[]; let row=[],field='',quoted=false,closed=false,recordHasQuote=false;
   const endField=()=>{row.push(field.trim());field='';closed=false;};
-  const endRow=()=>{endField();if(row.length>1||row.some(v=>v!==''))records.push(row);row=[];};
+  // A quoted empty field is an explicit record, not an ordinary blank line.
+  const endRow=()=>{endField();if(recordHasQuote||row.length>1||row.some(v=>v!==''))records.push(row);row=[];recordHasQuote=false;};
   for(let i=0;i<text.length;i++) {
     const c=text[i];
     if(quoted) {if(c==='"'){if(text[i+1]==='"'){field+='"';i++;}else{quoted=false;closed=true;}}else field+=c;continue;}
-    if(c==='"'){if(field.trim()!==''||closed)throw Error('Malformed CSV quote.');quoted=true;continue;}
+    if(c==='"'){if(field.trim()!==''||closed)throw Error('Malformed CSV quote.');quoted=true;recordHasQuote=true;continue;}
     if(c===','){endField();continue;}
     if(c==='\n'||c==='\r'){if(c==='\r'&&text[i+1]==='\n')i++;endRow();continue;}
     if(closed && !/\s/.test(c)) throw Error('Unexpected characters after closing CSV quote.');
     field+=c;
   }
   if(quoted)throw Error('Unclosed CSV quote.');
-  if(field!==''||row.length)endRow();
+  if(field!==''||row.length||recordHasQuote)endRow();
   if(records.length<2)throw Error('CSV needs a header and numeric data rows.');
   const headers=records.shift();
   const rows=records.map((r,i)=>r.map(s=>{if(!NUMBER.test(s))throw Error(`Row ${i+2}: missing or invalid numeric value.`);const v=Number(s);if(!Number.isFinite(v))throw Error(`Row ${i+2}: number must be finite.`);return v;}));
