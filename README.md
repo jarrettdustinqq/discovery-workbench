@@ -63,6 +63,8 @@ The tool's default split fits only training rows and evaluates seven final rows 
 
 ## Verify
 
+Pull requests and pushes to `main` run the engine regression suite automatically. Hosted browser and deployment-hash checks remain a separate manual workflow, so proposed source changes are not compared against the previous live deployment.
+
 ```sh
 node --test tests/engine.test.mjs
 python3 tests/browser_test.py --browser-engine chromium --url https://jarrettdustinqq.github.io/discovery-workbench/
