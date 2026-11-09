@@ -63,7 +63,11 @@ The tool's default split fits only training rows and evaluates seven final rows 
 
 ## Verify
 
-Pull requests and pushes to `main` run the engine regression suite automatically. Hosted browser and deployment-hash checks remain a separate manual workflow, so proposed source changes are not compared against the previous live deployment.
+Pull requests and pushes to `main` run both the engine suite and the Chromium
+browser regression against a locally served checkout. Published-site
+browser checks and deployment-hash verification remain a separate manual
+workflow, so proposed source changes are not compared against the previous
+live deployment.
 
 ```sh
 node --test tests/engine.test.mjs
